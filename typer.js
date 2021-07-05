@@ -1,8 +1,14 @@
+var data1 = 
+"Hello 600097\n" +
+"We are opening a simple Grocery business \n" +
+"We are opening a simple Grocery business \n" 
+;
+
 var Typer = {
   text: '',
   accessCountimer: null,
   index: 0,
-  speed: 2,
+  speed: 1,
   file: '',
   accessCount: 0,
   deniedCount: 0,
@@ -10,6 +16,8 @@ var Typer = {
     accessCountimer = setInterval(function () {
       Typer.updLstChr();
     }, 500);
+	/*Typer.text = data;
+	Typer.text = Typer.text.slice(0, Typer.text.length - 1);*/
     $.get(Typer.file, function (data) {
       Typer.text = data;
       Typer.text = Typer.text.slice(0, Typer.text.length - 1);
@@ -56,7 +64,7 @@ var Typer = {
       var text = Typer.text.substring(0, Typer.index);
       var rtn = new RegExp('\n', 'g');
 
-      $('#console').html(text.replace(rtn, '<br/>'));
+      $('#console').html(text.replace(rtn, '<br/><br/>'));
       window.scrollBy(0, 50);
     }
 
@@ -95,8 +103,8 @@ function replaceUrls(text) {
   }
 }
 
-Typer.speed = 3;
-Typer.file = 'typer.txt';
+Typer.speed = 2;
+Typer.file = 'data.txt';
 Typer.init();
 
 var timer = setInterval('t();', 30);
