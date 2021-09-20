@@ -1,9 +1,3 @@
-var data1 = 
-"Hello 600097\n" +
-"We are opening a simple Grocery business \n" +
-"We are opening a simple Grocery business \n" 
-;
-
 var Typer = {
   text: '',
   accessCountimer: null,
